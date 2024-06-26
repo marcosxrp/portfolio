@@ -1,0 +1,56 @@
+<header class="absolute w-screen h-20 bg-black bg-opacity-30 backdrop-blur-md flex items-center justify-between px-8 text-secondary">
+  <!--My logo-->
+  <div class=" flex gap-4 cursor-pointer">
+    <svg width="35" height="36" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M16.7426 0.00626535C22.1651 -0.183837 26.4163 3.98415 29.7822 8.14175C33.1262 12.2723 35.728 17.1401 34.8158 22.3304C33.8456 27.8506 30.3219 32.9549 25.0388 35.1302C20 37.205 14.4559 35.2372 9.64766 32.6934C5.18608 30.333 1.19002 26.8506 0.200012 21.9891C-0.762201 17.2641 1.9051 12.8982 4.82606 9.01667C7.95625 4.85706 11.4614 0.191416 16.7426 0.00626535Z" fill="url(#paint0_linear_2_8)" fill-opacity="0.5"/>
+      <defs>
+      <linearGradient id="paint0_linear_2_8" x1="-3.08993e-08" y1="4.34483" x2="29.8473" y2="36.2062" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102C57"/>
+      <stop offset="1" stop-color="white"/>
+      </linearGradient>
+      </defs>
+    </svg>
+    <div class="flex text-2xl gap-1 hover:-translate-y-1 transition-all duration-500">
+      <h2 class="font-bold">Marcos</h2>
+      <span class="font-extralight">Silva</span>
+    </div>
+  </div>
+
+  <!--Button to change the menu visibility-->
+  <button
+  (click)="changeMenuVisibility()"
+  class="lg:hidden cursor-pointer">
+    <svg
+    #menuLogo
+    width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 20H35" stroke="#FEFAF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M5 10H35" stroke="#FEFAF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M5 30H35" stroke="#FEFAF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <svg
+    #closeLogo
+    class="hidden"
+    width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30.3286 10.2946L10.3286 30.2946" stroke="#FEFAF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M10.3286 10.2946L30.3286 30.2946" stroke="#FEFAF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <!--My nav-->
+  <nav
+  #nav
+  class="bg-black lg:bg-transparent bg-opacity-30 hidden lg:block absolute top-20 left-0 lg:static lg:w-auto w-full">
+    <ul class="flex items-center gap-6 text-2xl font-medium capitalize flex-col lg:flex-row">
+      @for (page of pages(); track $index) {
+        <li class="size-full px-2 text-center text-nowrap cursor-pointer py-6 hover:-translate-y-1 transition-all duration-500">{{ page }}</li>
+        @if ($index !== 3) {
+          <svg class="hidden lg:block"
+          width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 10.1667C8.76142 10.1667 11 8.11464 11 5.58333C11 3.05203 8.76142 1 6 1C3.23858 1 1 3.05203 1 5.58333C1 8.11464 3.23858 10.1667 6 10.1667Z" stroke="#FEFAF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+
+        }
+      }
+    </ul>
+  </nav>
+
+</header>
