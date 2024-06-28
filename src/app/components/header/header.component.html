@@ -1,4 +1,4 @@
-<header class="z-10 absolute w-screen h-20 bg-black bg-opacity-30 flex items-center justify-between px-8 text-secondary">
+<header class="z-50 absolute w-screen h-20 bg-black bg-opacity-30 flex items-center justify-between px-8 text-secondary">
   <!--My logo-->
   <div class=" flex gap-4 cursor-pointer">
     <svg width="35" height="36" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,20 +20,10 @@
   <button
   (click)="changeMenuVisibility()"
   class="lg:hidden cursor-pointer">
-    <svg
-    #menuLogo
-    width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M5 20H35" stroke="#FEFAF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M5 10H35" stroke="#FEFAF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M5 30H35" stroke="#FEFAF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <svg
+    <img #menuLogo src="assets/menuLogo.svg" alt="menuLogo">
+    <img
     #closeLogo
-    class="hidden"
-    width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M30.3286 10.2946L10.3286 30.2946" stroke="#FEFAF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M10.3286 10.2946L30.3286 30.2946" stroke="#FEFAF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+    class="hidden" src="assets/closeLogo.svg" alt="close logo">
   </button>
   <!--My nav-->
   <nav
@@ -43,10 +33,9 @@
       @for (page of pages(); track $index) {
         <li class="size-full px-2 text-center text-nowrap cursor-pointer py-6 hover:-translate-y-1 transition-all duration-500">{{ page }}</li>
         @if ($index !== 3) {
-          <svg class="hidden lg:block"
-          width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 10.1667C8.76142 10.1667 11 8.11464 11 5.58333C11 3.05203 8.76142 1 6 1C3.23858 1 1 3.05203 1 5.58333C1 8.11464 3.23858 10.1667 6 10.1667Z" stroke="#FEFAF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+          <img
+          class="hidden lg:block"
+          src="assets/dotSvg.svg" alt="dot svg">
 
         }
       }
