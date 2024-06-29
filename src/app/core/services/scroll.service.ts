@@ -1,11 +1,23 @@
-import { Injectable, signal, ElementRef, effect } from '@angular/core';
+import { Injectable, signal, ElementRef } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ScrollService {
-  element = signal<ElementRef | undefined>(undefined)
+  heroSection = signal<ElementRef | undefined>(undefined);
+  trabalhosSection = signal<ElementRef | undefined>(undefined);
 
   constructor() {
+  }
+
+  goToSection(page: string){
+    switch(page){
+      case 'home':
+        this.heroSection()?.nativeElement.scrollIntoView({ behavior: 'smooth' });
+        break;
+      case 'trabalhos':
+        this.trabalhosSection()?.nativeElement.scrollIntoView({ behavior: 'smooth' });
+        break;
+    }
   }
 }

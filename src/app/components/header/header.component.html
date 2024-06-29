@@ -1,6 +1,7 @@
-<header class="z-50 absolute w-full h-20 bg-black bg-opacity-30 flex items-center justify-between px-3 lg:px-8 text-secondary">
+<div class=" absolute top-0 w-screen h-20 bg-black bg-opacity-30 flex items-center justify-between px-3 lg:px-8 text-secondary">
   <!--My logo-->
-  <div class=" flex gap-4 cursor-pointer">
+  <div (click)="goToHome()"
+  class=" flex gap-4 cursor-pointer">
     <svg width="35" height="36" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M16.7426 0.00626535C22.1651 -0.183837 26.4163 3.98415 29.7822 8.14175C33.1262 12.2723 35.728 17.1401 34.8158 22.3304C33.8456 27.8506 30.3219 32.9549 25.0388 35.1302C20 37.205 14.4559 35.2372 9.64766 32.6934C5.18608 30.333 1.19002 26.8506 0.200012 21.9891C-0.762201 17.2641 1.9051 12.8982 4.82606 9.01667C7.95625 4.85706 11.4614 0.191416 16.7426 0.00626535Z" fill="url(#paint0_linear_2_8)" fill-opacity="0.5"/>
       <defs>
@@ -31,7 +32,8 @@
   class="bg-black backdrop-blur-lg  bg-opacity-30 shadow-lg shadow-black lg:shadow-none lg:bg-transparent hidden lg:block absolute top-20 left-0 lg:static lg:w-auto w-full">
     <ul class="flex items-center gap-6 text-2xl font-medium capitalize flex-col lg:flex-row">
       @for (page of pages(); track $index) {
-        <li tabindex="0" class="size-full px-2 text-center text-nowrap cursor-pointer py-6 hover:-translate-y-1 transition-all duration-500">{{ page }}</li>
+        <button tabindex="0" (click)="goToSection(page)"
+        class="size-full px-2 text-center text-nowrap cursor-pointer py-6 hover:-translate-y-1 transition-all duration-500">{{ page }}</button>
         @if ($index !== 3) {
           <img
           class="hidden lg:block"
@@ -42,4 +44,4 @@
     </ul>
   </nav>
 
-</header>
+</div>

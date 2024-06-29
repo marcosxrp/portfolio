@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject, viewChild } from '@angular/core';
+import { Component, ElementRef, inject, viewChild, AfterViewInit } from '@angular/core';
 import { TrabalhosComponent } from '../trabalhos/trabalhos.component';
 import { ScrollService } from '../../core/services/scroll.service';
 
@@ -9,12 +9,18 @@ import { ScrollService } from '../../core/services/scroll.service';
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css'
 })
-export class HeroComponent {
+export class HeroComponent implements AfterViewInit {
   //variables
-  scrollService = inject(ScrollService);
+  private scrollService = inject(ScrollService);
+
+  private heroSection = viewChild<ElementRef>('heroSection')
+
+  ngAfterViewInit(){
+    this.scrollService.heroSection.set(this.heroSection());
+  }
 
   goToTrabalhos(){
-    this.scrollService.element()?.nativeElement.scrollIntoView({behavior:'smooth', block: 'start'})
+    this.scrollService.trabalhosSection()?.nativeElement.scrollIntoView({behavior:'smooth', block: 'start'})
   }
 
 }

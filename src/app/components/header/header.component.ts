@@ -1,4 +1,5 @@
 import { Component, ElementRef, Renderer2, inject, signal, viewChild } from '@angular/core';
+import { ScrollService } from '../../core/services/scroll.service';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +10,7 @@ import { Component, ElementRef, Renderer2, inject, signal, viewChild } from '@an
 })
 export class HeaderComponent {
   //injections
+  private scrollService = inject(ScrollService);
   private renderer = inject(Renderer2);
   //variables
   protected pages = signal<string[]>(['home', 'trabalhos', 'sobre mim', 'contato']);
@@ -31,6 +33,16 @@ export class HeaderComponent {
     }
 
 
+  }
+
+  goToHome(){
+    this.scrollService.goToSection('home');
+  }
+
+
+  goToSection(page: string){
+    this.scrollService.goToSection(page);
+    this.changeMenuVisibility();
   }
 
 }
