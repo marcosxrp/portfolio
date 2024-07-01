@@ -35,11 +35,18 @@ export class HeaderComponent {
 
   }
 
+  /**
+   * go to home section
+   */
   goToHome(){
     this.scrollService.goToSection('home');
   }
 
 
+  /**
+   * go to section
+   * @param page
+   */
   goToSection(page: string){
     this.scrollService.goToSection(page);
     this.changeMenuVisibility();

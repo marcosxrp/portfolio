@@ -10,17 +10,24 @@ import { ScrollService } from '../../core/services/scroll.service';
   styleUrl: './hero.component.css'
 })
 export class HeroComponent implements AfterViewInit {
-  //variables
+  // injections
   private scrollService = inject(ScrollService);
 
+  // variables
   private heroSection = viewChild<ElementRef>('heroSection')
 
+  /**
+   * set the hero section in the service
+   */
   ngAfterViewInit(){
     this.scrollService.heroSection.set(this.heroSection());
   }
 
+  /**
+   * go to trabalhos section
+   */
   goToTrabalhos(){
-    this.scrollService.trabalhosSection()?.nativeElement.scrollIntoView({behavior:'smooth', block: 'start'})
+    this.scrollService.goToSection('trabalhos');
   }
 
 }

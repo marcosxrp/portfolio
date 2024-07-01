@@ -3,13 +3,14 @@ class="bg-fourth px-3 lg:px-8 pt-20 min-h-screen">
   <div class="flex items-center gap-4">
     <h2 class="text-main font-extrabold text-7xl">Trabalhos</h2>
     <span class="text-main font-extrabold text-7xl">-</span>
-    <div>
-      <div class="flex items-center gap-2 cursor-pointer">
+    <div class="relative" >
+      <div (click)="changeSelectionView()"
+      class="flex items-center gap-2 cursor-pointer">
         <h4 class="text-secondary font-extrabold text-4xl">{{ selectedOption() }}</h4>
-        <img src="assets/select.svg" alt="select svg">
+        <img #optionSvg src="assets/select.svg" alt="select svg">
       </div>
-      <div #optionsDiv (click)="changeSelectionView()"
-      class="hidden absolute left-1/2 -translate-x-1/2 rounded-lg border-secondary border-2 w-fit">
+      <div #optionsDiv
+      class="hidden absolute rounded-lg border-secondary border-2 w-fit">
         @for (option of options(); track $index) {
           <span (click)="selectOption(option)"
           class="block text-secondary font-bold text-2xl px-4 py-2 hover:bg-secondary hover:text-main transition-all duration-500 cursor-pointer">{{ option }}</span>
