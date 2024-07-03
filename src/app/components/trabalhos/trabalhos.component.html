@@ -9,10 +9,11 @@ class="bg-fourth px-3 lg:px-8 pt-20 min-h-screen">
       <div (click)="changeSelectionView()"
       class="flex items-center text-secondary gap-2 cursor-pointer border-2 border-secondary rounded-lg p-2 hover:bg-main hover:border-main transition-all duration-500">
         <h4 class="font-extrabold text-4xl capitalize">{{ selectedOption() }}</h4>
-        <img #optionSvg src="assets/select.svg" alt="select svg" >
+        <img #optionSvg src="assets/select.svg" alt="select svg"
+        class="transition-all duration-500">
       </div>
       <div #optionsDiv
-      class="z-40 hidden absolute bg-black/30 backdrop-blur-sm top-16 rounded-lg border-secondary border-2 w-fit">
+      class="z-40 absolute scale-y-0 transition-all duration-500 origin-top bg-black/30 backdrop-blur-sm top-16 rounded-lg border-secondary border-2 w-fit">
         @for (option of options(); track $index) {
           <span (click)="selectOption(option)"
           class="block capitalize text-secondary font-bold text-2xl px-4 py-2 hover:bg-secondary hover:text-main transition-all duration-500 cursor-pointer">{{ option }}</span>

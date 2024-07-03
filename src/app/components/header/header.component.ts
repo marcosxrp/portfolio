@@ -25,11 +25,11 @@ export class HeaderComponent {
     if(this.closeLogo()?.nativeElement.classList.contains('hidden')){
       this.renderer.addClass(this.menuLogo()?.nativeElement, 'hidden');
       this.renderer.removeClass(this.closeLogo()?.nativeElement, 'hidden');
-      this.renderer.removeClass(this.nav()?.nativeElement, 'hidden');
+      this.renderer.removeClass(this.nav()?.nativeElement, 'scale-y-0');
     }else{
       this.renderer.removeClass(this.menuLogo()?.nativeElement, 'hidden');
       this.renderer.addClass(this.closeLogo()?.nativeElement, 'hidden');
-      this.renderer.addClass(this.nav()?.nativeElement, 'hidden');
+      this.renderer.addClass(this.nav()?.nativeElement, 'scale-y-0');
     }
 
 

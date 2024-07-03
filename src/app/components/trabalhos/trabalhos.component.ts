@@ -43,11 +43,11 @@ export class TrabalhosComponent implements AfterViewInit{
    * Show and hide the options and change the style of the svg
    */
   changeSelectionView(){
-    if(this.optionsDiv()?.nativeElement.classList.contains('hidden')){
-      this.renderer.removeClass(this.optionsDiv()?.nativeElement, 'hidden');
+    if(this.optionsDiv()?.nativeElement.classList.contains('scale-y-0')){
+      this.renderer.removeClass(this.optionsDiv()?.nativeElement, 'scale-y-0');
       this.renderer.setStyle(this.optionSvg()?.nativeElement, 'transform', 'rotate(180deg)');
     }else{
-      this.renderer.addClass(this.optionsDiv()?.nativeElement, 'hidden');
+      this.renderer.addClass(this.optionsDiv()?.nativeElement, 'scale-y-0');
       this.renderer.setStyle(this.optionSvg()?.nativeElement, 'transform', 'rotate(0)');
     }
   }
