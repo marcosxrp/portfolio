@@ -1,16 +1,20 @@
-import { Component, viewChild, ElementRef, inject, AfterViewInit, signal, Renderer2 } from '@angular/core';
+import { Component, viewChild, ElementRef, inject, AfterViewInit, signal, Renderer2, computed } from '@angular/core';
 import { ScrollService } from '../../core/services/scroll.service';
+import { TrabalhosService } from '../../core/services/trabalhos.service';
+import { CardComponent } from './card/card.component';
+import { Trabalho } from '../../core/models/trabalho.model';
 
 @Component({
   selector: 'app-trabalhos',
   standalone: true,
-  imports: [],
+  imports: [CardComponent],
   templateUrl: './trabalhos.component.html',
   styleUrl: './trabalhos.component.css'
 })
 export class TrabalhosComponent implements AfterViewInit{
   // injections
   private scrollService = inject(ScrollService);
+  protected trabalhosService = inject(TrabalhosService);
   private renderer = inject(Renderer2);
 
   // variables
@@ -18,8 +22,15 @@ export class TrabalhosComponent implements AfterViewInit{
   private optionsDiv = viewChild<ElementRef>('optionsDiv');
   private optionSvg = viewChild<ElementRef>('optionSvg');
 
-  protected options = signal(['Todos', 'Angular', 'Css', 'Tailwind']);
+  protected options = signal(['todos', 'angular', 'css', 'tailwind', 'typescript']);
   protected selectedOption = signal<string>('Todos');
+  /**
+   * Get the selected option and return the filtered data
+   */
+  protected trabalhosFiltered = computed<Trabalho[]>(() => {
+    if(this.selectedOption().toLowerCase() === 'todos') return this.trabalhosService.trabalhos();
+    return this.trabalhosService.trabalhos().filter(trabalho => trabalho.tags.includes(this.selectedOption()))
+  })
 
   /**
    * set the trabalhos section in the service
