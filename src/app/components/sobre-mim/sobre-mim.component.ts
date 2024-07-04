@@ -19,7 +19,7 @@ export class SobreMimComponent {
     {titulo: 'Qualidades', lista: ['Ótimo com trabalho em equipe!', 'Sempre cumprindo prazos!', 'Sempre buscando o melhor em meus projetos!']},
     {titulo: 'Qualidades dos meus projetos', lista: ['Responsividade sempre!', 'SEO', 'Expêriencia de qualidade para o usuário!', 'Código limpo e bem comentado']}
   ])
-  private aboutSection = viewChild<ElementRef>('aboutSection')
+  private aboutSection = viewChild<ElementRef>('aboutSection');
 
   /**
    * set the about section in the service

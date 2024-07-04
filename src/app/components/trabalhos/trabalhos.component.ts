@@ -3,11 +3,12 @@ import { ScrollService } from '../../core/services/scroll.service';
 import { TrabalhosService } from '../../core/services/trabalhos.service';
 import { CardComponent } from './card/card.component';
 import { Trabalho } from '../../core/models/trabalho.model';
+import { LinguagensFrameworksComponent } from '../linguagens-frameworks/linguagens-frameworks.component';
 
 @Component({
   selector: 'app-trabalhos',
   standalone: true,
-  imports: [CardComponent],
+  imports: [CardComponent, LinguagensFrameworksComponent],
   templateUrl: './trabalhos.component.html',
   styleUrl: './trabalhos.component.css'
 })

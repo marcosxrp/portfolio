@@ -5,11 +5,12 @@ import { HeroComponent } from './components/hero/hero.component';
 import { TrabalhosComponent } from './components/trabalhos/trabalhos.component';
 import { LinguagensFrameworksComponent } from './components/linguagens-frameworks/linguagens-frameworks.component';
 import { SobreMimComponent } from './components/sobre-mim/sobre-mim.component';
+import { ContatoComponent } from './components/contato/contato.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, HeroComponent, TrabalhosComponent, LinguagensFrameworksComponent, SobreMimComponent],
+  imports: [RouterOutlet, HeaderComponent, HeroComponent, TrabalhosComponent, LinguagensFrameworksComponent, SobreMimComponent, ContatoComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
