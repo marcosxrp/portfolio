@@ -1,0 +1,25 @@
+<div #aboutSection class="relative flex justify-end px-3 lg:px-8">
+  <img src="assets/about-bg.png" alt="background"
+  class="z-0 h-full absolute left-0 opacity-20 lg:opacity-100">
+  <div class="z-10 min-w-[50vw] max-w-[650px] pt-20">
+    <h2 class="text-fourth text-left font-extrabold text-6xl sm:text-7xl">Sobre mim</h2>
+    <div class="mt-12 flex flex-col gap-10">
+      @for (el of info(); track $index) {
+        <div class="flex flex-col gap-5">
+          <h4 class="text-secondary font-extrabold text-3xl">{{ el.titulo }}</h4>
+          <div class="flex gap-5 items-center">
+            <img src="assets/curved-arrow.svg" alt="curved arrow"
+            class="self-start">
+            <div class="flex flex-col">
+              @for (item of el.lista; track $index) {
+                <p class="text-secondary text-xl sm:text-2xl">&#8226; {{ item }}</p>
+              }
+            </div>
+          </div>
+        </div>
+
+      }
+    </div>
+    <p class="text-fourth font-extrabold text-2xl mt-16">E o melhor de tudo, não me intimido e sempre busco aprender mais, sozinho ou com meus colegas!</p>
+  </div>
+</div>

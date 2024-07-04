@@ -7,6 +7,7 @@ export class ScrollService {
   // variables
   heroSection = signal<ElementRef | undefined>(undefined);
   trabalhosSection = signal<ElementRef | undefined>(undefined);
+  aboutSection = signal<ElementRef | undefined>(undefined);
 
   constructor() {
   }
@@ -22,6 +23,9 @@ export class ScrollService {
         break;
       case 'trabalhos':
         this.trabalhosSection()?.nativeElement.scrollIntoView({ behavior: 'smooth' });
+        break;
+      case 'sobre mim':
+        this.aboutSection()?.nativeElement.scrollIntoView({ behavior: 'smooth' });
         break;
     }
   }
