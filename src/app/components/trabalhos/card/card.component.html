@@ -8,7 +8,8 @@
       </h4>
       <div class="flex gap-4 justify-center mb-6">
         @for (tag of trabalhoInput().tags; track $index) {
-          <img [src]="'assets/' + tag + '.svg'" alt="tag">
+          <img [src]="'assets/' + tag + '.svg'" alt="tag"
+          class="size-6">
         }
       </div>
       <p class="text-sm">
