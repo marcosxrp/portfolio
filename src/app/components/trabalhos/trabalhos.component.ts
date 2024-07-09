@@ -23,7 +23,7 @@ export class TrabalhosComponent implements AfterViewInit{
   private optionsDiv = viewChild<ElementRef>('optionsDiv');
   private optionSvg = viewChild<ElementRef>('optionSvg');
 
-  protected options = signal(['todos', 'angular', 'css', 'tailwind', 'typescript']);
+  protected options = signal(['todos', 'angular', 'css', 'tailwind', 'typescript', 'html']);
   protected selectedOption = signal<string>('Todos');
   /**
    * Get the selected option and return the filtered data
