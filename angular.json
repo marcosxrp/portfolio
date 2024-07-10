@@ -17,7 +17,10 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "outputPath": "dist/portfolio",
+            "outputPath": {
+              "base": "docs/",
+              "browser": ""
+            },
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
