@@ -22,10 +22,7 @@
                 "output": "/"
               }
             ],
-            "outputPath": {
-              "base": "docs/",
-              "browser": ""
-            },
+            "outputPath": "dist/portfolio",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
