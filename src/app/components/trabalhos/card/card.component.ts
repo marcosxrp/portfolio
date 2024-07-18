@@ -1,5 +1,6 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { Trabalho } from '../../../core/models/trabalho.model';
+import { ScrollService } from '../../../core/services/scroll.service';
 
 @Component({
   selector: 'app-card',
@@ -11,9 +12,14 @@ import { Trabalho } from '../../../core/models/trabalho.model';
 export class CardComponent {
   //variables
   trabalhoInput = input.required<Trabalho>();
+  scrollService = inject(ScrollService);
 
 
   goToSite(url: string){
+    if(url === 'home'){
+      this.scrollService.goToSection('home');
+      return;
+    }
     window.open(url, '_blank');
   }
 
